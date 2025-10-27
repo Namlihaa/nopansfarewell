@@ -1,48 +1,623 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-  <title>Nopan’s Farewell</title>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thread Facebook - Hiasan</title>
+  <style>
+    :root{--card-bg:#fff;--muted:#6b7280;--accent:#1877f2}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f3f4f6; display:flex; align-items:center; justify-content:center; padding:36px;}
+    .card{width:min(720px,96%); background:var(--card-bg); border-radius:12px; box-shadow:0 6px 20px rgba(15,23,42,0.08); overflow:hidden}
+    .header{display:flex; gap:12px; padding:16px}
+    .avatar{width:56px; height:56px; border-radius:50%; background-size:cover; background-position:center; flex-shrink:0}
+    .meta{display:flex; flex-direction:column; justify-content:center}
+    .name{font-weight:600; color:#0f172a}
+    .time{font-size:13px; color:var(--muted)}
+
+    .caption{padding:0 16px 12px; font-size:15px; color:#111827; line-height:1.5;}
+
+    .media{background:#111; display:flex; align-items:center; justify-content:center}
+    video{width:100%; height:auto; display:block}
+
+    .actions{display:flex; gap:8px; padding:10px 12px; align-items:center; border-top:1px solid #eef2f7}
+    .btn{flex:1; text-align:center; padding:10px 12px; border-radius:8px; cursor:default; user-select:none; font-weight:600; font-size:14px}
+    .btn svg{vertical-align:middle; margin-right:8px}
+    .btn-like{color:#ef4444}
+    .btn-comment{color:#0f172a}
+    .btn-share{color:#059669}
+
+    .stats{display:flex; gap:12px; padding:6px 14px; color:var(--muted); font-size:13px; align-items:center}
+    .comments{padding:12px 14px 20px}
+    .comment{display:flex; gap:10px; padding:10px 0; border-top:2px solid #f3f4f6}
+    .c-avatar{width:40px; height:40px; border-radius:50%; background-size:cover; background-position:center; flex-shrink:0}
+    .c-body{flex:1}
+    .c-name{font-weight:600; font-size:14px}
+    .c-text{font-size:12px; color:#111827; margin-top:4px; line-height:1.5; position:relative; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4;}
+    .c-text.expanded{-webkit-line-clamp:unset; max-height:none;}
+    .read-more{color:var(--accent); font-size:13px; cursor:pointer; margin-top:4px; display:none;}
+    .c-time{font-size:12px; color:var(--muted); margin-top:6px}
+
+    @media (max-width:420px){.avatar{width:48px;height:48px}.btn{font-size:13px;padding:8px}}
+  </style>
 </head>
 <body>
-  <h1>Selamat jalan Nopan!</h1>
-  <p>Semoga sukses di tempat baru 🎉</p>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+  <article class="card" aria-label="Contoh thread Facebook - hanya hiasan">
+    <header class="header">
+      <div class="avatar" style="background-image:url('https://via.placeholder.com/160x160.png?text=Avatar')" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="name">penyu_Darat</div>
+        <div class="time">12 jam · Publik</div>
+      </div>
+    </header>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="images/nopan dec.png" alt="Los Angeles">
+    <div class="caption">
+      Sore hari menonton drama<br>
+      Drama korea aktornya tegas<br>
+      Ingin hati tetap bekerja bersama<br>
+      Apa daya harus pindah tugas<br>
     </div>
 
-    <div class="item">
-      <img src="images/nopan jak.png" alt="Chicago">
+    <section class="media">
+      <video src="sample-video.mp4" poster="https://via.placeholder.com/800x450.png?text=Video+Placeholder" autoplay loop muted playsinline preload="metadata">
+        Browser Anda tidak mendukung tag video.
+      </video>
+    </section>
+
+    <div class="actions" role="group" aria-label="Aksi postingan">
+      <div class="btn btn-like" title="Suka">👍 Like</div>
+      <div class="btn btn-comment" title="Komentar">💬 Comment</div>
+      <div class="btn btn-share" title="Bagikan">↗️ Share</div>
     </div>
 
-    <div class="item">
-      <img src="images/nopan krl.png" alt="New York">
+    <div class="stats">
+      <div>👍 1.2K</div>
+      <div>💬 48 komentar</div>
+      <div>🔁 24 share</div>
     </div>
-  </div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+    <section class="comments" aria-label="Komentar statis">
+
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=C')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">J no limit</div>
+          <div class="c-text">
+            Hai Nopan<br>
+            <br>
+            Walau tak ucap hello pergi kau melambai<br>
+            Dengan kata-kata manismu itu kau tiba-tiba bilang perpisahan<br>
+            Tak ayal jiwaku dan ragaku ini sontak tak bisa berucap lagi<br>
+            Namun, ku teguhkan diri tuk melepasmu<br>
+            <br>
+            Nopan, kau pasti tahu. Kata-kata dari mulut manismu itu selalu terbayang-bayang dibenakku<br>
+            Susah tuk dilepaskan, sampai ku terus meminta "Oh Tuhan, Tolong Aku" ~nada Derby Romero. <br>
+            Namun, semua itu sia-sia hingga aku pun mengiyakannya bahwa dirimu kan selalu ada<br>
+            <br>
+            "Ubur-ubur ikan lele<br>
+            Semoga yang terbaik di setiap langkah yang kau jalani le"<br>
+            <br>
+            See u when i see u<br>
+            Sampai bertemu di Hammersonic nanti, kita rayakan bersama the black parade<br>
+            <br>
+            Untukmu<br>
+            Dari J no limit
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">1 hari</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">DhiidiEt_-_AjAah</div>
+          <div class="c-text">Hai Nopan, sayang sekali belum sempat bertemu tatap muka dan aktifitas bersama yang intens. Semoga sukses dan bahagia selalu!</div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=B')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">[ي . ش . ت]</div>
+          <div class="c-text">
+            Haii Kak Nopan. Senang kenal sama kakak, denger suara kakak yg semangatt banget hahaha. Semoga kakak sukses selalu, dikelilingi teman-teman yg asik & baik, sehat selalu, semoga betah juga di tempat baru. Berdoa dimulai .....🙇🏻‍♀ aamiinnn.<br>
+            <br>
+            Pergi ke hutan memetik kelapa,<br>
+            Kelapanya manis di tepi kota.<br>
+            Walau jarak memisahkan kita,<br>
+            Jangan pernah lupakan kita 😁<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">5 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Ghanieee theboyzz - [JUAL TELUR ASIN]</div>
+          <div class="c-text">
+            Haii Kak Nopann,<br>
+            <br>
+            Aku Ghani, mungkin aku cuma kenal Kak Nopan dari virtual,<br>
+            belum pernah secara langsung,<br>
+            tapi aku mengetahui dan merasakan kinerja Kak Nopan yang totalitas secara langsung,<br>
+            thank you yaa Kak Nopan atas dedikasinya selama ini,<br>
+            semoga semakin sukses di tempat barunya,<br>
+            semangat Kak Nopannn<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=B')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">hanaaaaaciimm_</div>
+          <div class="c-text">Halo ka Nopan,<br>
+            <br>
+            Sukses terus untuk langkah yang diambil ke depannya.<br>
+            Tetap jadi YO YO!! Rapper Nopan yang keren.<br>
+            Terus ceria dan menebar tawa ya ka kesekeliling ka Nopan.<br>
+            Pantunnya jangan lupa<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">5 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">MikHaEl_Mau-ikuueetz</div>
+          <div class="c-text">
+            Halo Kak Nopan drafter paling jauh,<br>
+            <br>
+            Gak kerasa tiba-tiba udah graduation aja dari Dekoruma.<br>
+            Ya begitulah kehidupan,<br>
+            semoga kakak sukses terus ke depannya dimanapun kakak berada,<br>
+            tetap semangat ka!<br>
+            dadah~<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Fii0_ceLalu_m3nungguh</div>
+          <div class="c-text">
+            Halo Kak Nopan, ini Fio hehe.<br>
+            <br>
+            Pengalaman yang luar biasa dan senang bisa mengenalmu.<br>
+            Terima kasih banyak kakak selalu membantu dan kerja sama serta kenangannya selama ini kak,<br>
+            aku doain yang terbaik selalu untuk Kak Nopan 🙆🏻‍♀.<br>
+            Semoga sukses untuk masa depan kakak yang cerah,<br>
+            bahagia selalu, dan tetap semangat ya kakk 💪🏻✨<br>
+            <br>
+            Semoga ini adalah awal dari apapun yang kakak inginkan yaa,<br>
+            semangat teruss fightinggg 💥<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">AmiiR4a_TAbac4n</div>
+          <div class="c-text">
+            Halo Kak Nopan,<br>
+            <br>
+            Walaupun kita belum pernah ngobrol langsung atau ketemu,<br>
+            cuma aku yakin kakak orangnya seru,<br>
+            jadi pasti akan lebih mudah bergaul di tempat yang baru!!<br>
+            <br>
+            Harapanku semoga betah di tempat yang baru<br>
+            dan segala urusannya dilancarkan,<br>
+            sukses terus‼🔥<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">ChyM4aH r0chiMah</div>
+          <div class="c-text">
+            Halo Kak!!<br>
+            <br>
+            Senang bisa kenal Ka Nopan yang selalu penuh semangat untuk bekerja,<br>
+            selalu fast response ketika ada yang bertanya hehehe.<br>
+            Selamat atas pekerjaan barunya Kak,<br>
+            wishing you the very best on your new journey.<br>
+            <br>
+            Jalan-jalan ke Balikpapan<br>
+            jangan lupa ke Pantai Lamaru 😄<br>
+            Good luck Kak Nopan,<br>
+            semoga sukses di tempat baru!!<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">NABI_lahh pEnjaga_BAndoeng</div>
+          <div class="c-text">
+            Halo Nopaaan,<br>
+            <br>
+            It’s hard to say goodbye to the happy virus of our team.<br>
+            Kamu tuh selalu happy kapanpun, dan selalu siap sedia kapanpun,<br>
+            patut diacungi jempol banget!<br>
+            Your positive energy has made our team feel lighter, and way more fun.<br>
+            <br>
+            Even though pindah kantor,<br>
+            we know you’ll keep spreading that contagious happiness wherever you go.<br>
+            Jangan pernah berubah ya, Pan.<br>
+            Thank you for always bringing joy,<br>
+            dan maaf ya kalo selama ini ada kata-kata atau bercandaan yang mungkin bikin sakit hati.<br>
+            <br>
+            Good luck in your new team!!!<br>
+            Sukses selalu ya Pan! ✨<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">DaSep_si_Phalink_KaZzep</div>
+          <div class="c-text">
+            bentar nyak nopan, lagi di ketik
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">NiisaH Smil3_For3vVer</div>
+          <div class="c-text">
+            Halo Nopan,<br>
+            <br>
+            Selamat atas langkah barunya ya.<br>
+            Semoga selalu sukses di tempat yang baru,<br>
+            semakin bersinar dan mendapatkan kesempatan yang lebih besar untuk berkembang ✨<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">AyhyiE_Nak_TangZel</div>
+          <div class="c-text">
+            Halo Nopan! ✨<br>
+            <br>
+            Walaupun kita belum pernah ketemu, cuma di sync aja,<br>
+            tapi disayangkan Nopan resign dengan waktu yang darderdor yaaa tiba-tiba sekali :"")<br>
+            <br>
+            Sukses & semangat terus buat meniti karirnya!<br>
+            Selamat datang di Jakarta 😬<br>
+            Betah-betah ya Nopan,<br>
+            kalau bosen boleh banget dateng ke HO buat main-main hehe 😄<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">teR-eChaa-eCha</div>
+          <div class="c-text">
+            Hi Kak Nopan!<br>
+            <br>
+            Terima kasih atas kerjasamanya selama ini.<br>
+            Semoga Kak Nopan lancar di tempat barunya dan sukses selalu.<br>
+            Semoga one day bisa ketemu langsung.<br>
+            Good luck Kak Nopan! ✨<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">VanDhill_okeh</div>
+          <div class="c-text">
+            Ikan lele pandai menyelam,<br>
+            Cari makan tak pernah malas.<br>
+            Nopan melangkah dengan tekad dalam,<br>
+            Semoga karier makin berkelas!<br>
+            <br>
+            Sukses terus di mana Nopan berada,<br>
+            bakal kangen dipanggil Nopan dengan dua huruf & dua telapak "kk 🙏" itu<br>
+            dengan pertanyaan yang sangat dipenuhi rasa penasaran.<br>
+            <br>
+            Terima kasih Nopan 🙏<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">ZevRiNa_EA_ea</div>
+          <div class="c-text">
+            Makasih udah jadi temen kerja yang seru buat tim drafter Dekoruma,<br>
+            Sukses terus ya di tempat baru!<br>
+            Jangan lupa main-main kalau sempet~ 😄<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Ham-BeRgaRs</div>
+          <div class="c-text">
+            Nopannn,<br>
+            <br>
+            Kita emang ga pernah ketemu tapi gue paling inget pas project Medan gue bantuin lu,<br>
+            eh ternyata project-nya dicancel wkwk 😆<br>
+            <br>
+            Btw good luck yaa di mana pun berada,<br>
+            kaget tiba-tiba resign ga koar-koar dulu haha 😂<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Faezzal CAH Swagz</div>
+          <div class="c-text">
+            Pergi ke pasar membeli papan, Cakepp!!!!<br>
+            Papan dibawa hingga ke pelabuhan.<br>
+            Walau kini berpisah, wahai Nopan,<br>
+            Doa kami selalu untuk kesuksesan.<br>
+            Grrrr.....<br>
+            <br>
+            Matahari terbenam di ufuk barat,<br>
+            Langit jingga indah mempesona.<br>
+            Selamat jalan Nopan yang hebat,<br>
+            Semoga kariermu semakin gemilang di sana. Aminnn....<br>
+            <br>
+            Satu lagi ini......<br>
+            Bunga melati harum mewangi,<br>
+            Tumbuh subur di tepi jalan.<br>
+            Nopan pergi membawa mimpi,<br>
+            Kami di sini tetap mendoakan. 🙏<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Faridzz Ezzz</div>
+          <div class="c-text">
+            Selamat atas langkah barunya ya Kak Nopan,<br>
+            Semoga sukses di tempat yang baru dan kariermu semakin cemerlang.<br>
+            Terima kasih atas kerja sama dan semangatnya di Dekoruma selama ini.<br>
+            Sukses selalu, aminn 🙏🏻<br>
+            <br>
+            Pagi hari menatap embun,<br>
+            Burung berkicau hati riang.<br>
+            Kak Nopan pergi menapak jalan baru penuh harapan,<br>
+            Semoga langkahmu selalu lapang dan gemilang 🔥<br>
+
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Yustiin_Good!</div>
+          <div class="c-text">
+            Selamat atas pekerjaan barunya ya kakk..<br>
+            Tetap menjadi Ka Nopan yang lucu dan penuh semangat di tempat yang baru.<br>
+            Sukses selaluu! ✨<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Irennn_ThEa CeunAh</div>
+          <div class="c-text">
+            nuhun pisan nopan, ieu lagi di tingali,
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">DhiaNn GgarHool</div>
+          <div class="c-text">
+            Semangat Nopan...<br>
+            Semoga sehat-sehat selalu dan sukses di tempat barunya yah... 💪✨<br>   
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">ArkrtkA_n_d'g3Nk</div>
+          <div class="c-text">
+            sukses selalu di tempat yang baru ka Nopan, semoga kariernya makin cemerlang,<br>
+            terimakasih udah ikut memeriahkan suasana kalau sedang sync dengan positif dan ceria,<br>
+            sampai jumpaa✨<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">FhaDheL n D'G4nkkZ</div>
+          <div class="c-text">
+            Terima kasih banyak-banyak ka Nopann.<br>
+            Sukses selalu dimana pun, kapan pun, sama siapapun.<br>
+            Mumpung lagi di Jakarta, ubur-ubur ikan sepat,<br>
+            mampir mampir kalo sempat. 😄<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">FEbRii [FYP] - The Pratama's</div>
+          <div class="c-text">
+            Terima kasih Nopan atas kebersamaan dan kerja samanya selama ini.<br>
+            Semoga sukses selalu menyertai langkahmu ke depan.<br>
+            Semoga di tempat yang baru kamu bisa berkembang lebih baik lagi<br>
+            dan mencapai apa yang kamu cita-citakan. 🌟<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">VM Studio - Architecture & Interior Design</div>
+          <div class="c-text">
+            Terimakasih Nopan, atas kebersamaan & Kerjasama yang baik selama di Dekoruma.<br>
+            Dedikasi, Ketelitian, dan kontribusi yang telah kamu berikan sangat berarti bagi tim.<br>
+            Semoga langkahmu di tempat baru membawa kesuksesan dan pengalaman berharga.<br>
+            Kami mendoakan agar perjalanan karirmu ke depan penuh dengan kesuksesan,<br>
+            kesempatan baru, dan pencapaian yang membanggakan.<br>
+            Sukses selalu, dan semoga kita dapat berjumpa kembali di kesempatan lain. 🌟<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">D'WiR4a D'Cozzy</div>
+          <div class="c-text">
+            Thank you Kak Nopan untuk bantuan dan kontribusinya bagi tim drafter selama ini,<br>
+            selalu menghibur dengan pantunnya :D<br>
+            Sehat selalu dan sukses terus untuk perjalanan ke depannya ya kak,<br>
+            Goodluck nanti di Jakarta :)))<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Ica_BuitENzorg</div>
+          <div class="c-text">
+            walaupun aku ninggalin duluan, tapi ada banget shock nya kamu juga cabut.<br>
+            Akh! Masih suka pantun kan ya? yakin sih, para drafter bakal kangen sama celotehan Nopan pas sync.<br>
+            <br>
+            Terimakasih ya untuk segala bantuannya selama di Dekoruma.<br>
+            Terimakasih juga sharing dan cerita-cerita singkatnya!<br>
+            <br>
+            Semoga ilmu yang didapatkan di Dekoruma bisa berguna kedepannya ya.<br>
+            Selamat mengarungi chapter kehidupan baru, dan selamat bertumbuh!!<br>
+            <br>
+            Siap berpantun di tempat baru ya?!! wkwk<br>
+            <br>
+            Bye!<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
+        <div class="c-body">
+          <div class="c-name">Indra The Pratama's</div>
+          <div class="c-text">
+            Wishing you all the best on your new journey!<br>
+            May your future be filled with success and happiness,<br>
+            It's been a pleasure working with you.<br>
+            Best of luck with your new job, I know you're going to do great!<br>
+            <br>
+            And last, Ka Nopan telah meninggalkan jejak di sini,<br>
+            meskipun kita belum pernah ketemu secara langsung,<br>
+            but kehadiran Ka Nopan pasti akan dirindukan dengan pantun-pantun super dadakannya.<br>
+            Selamat jalan dan semoga sukses! 🌟<br>
+          </div>
+          <span class="read-more">Lihat selengkapnya</span>
+          <div class="c-time">2 jam</div>
+        </div>
+      </div>
+      
+    </section>
+  </article>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const comments=document.querySelectorAll('.c-body');
+      comments.forEach(c=>{
+        const text=c.querySelector('.c-text');
+        const btn=c.querySelector('.read-more');
+        if(text.scrollHeight>text.clientHeight+5){
+          btn.style.display='inline-block';
+          btn.addEventListener('click',()=>{
+            text.classList.toggle('expanded');
+            btn.textContent=text.classList.contains('expanded')?'Sembunyikan':'Lihat selengkapnya';
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
