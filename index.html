@@ -6,15 +6,15 @@
   <title>Thread Facebook - Hiasan</title>
   <style>
     :root{--card-bg:#fff;--muted:#6b7280;--accent:#1877f2}
-    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f3f4f6; display:flex; align-items:center; justify-content:center; padding:36px;}
-    .card{width:min(720px,96%); background:var(--card-bg); border-radius:12px; box-shadow:0 6px 20px rgba(15,23,42,0.08); overflow:hidden}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; font-size:14px; background:#f3f4f6; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:36px;}
+    .card{width:min(720px,96%); background:var(--card-bg); border-radius:12px; box-shadow:0 6px 20px rgba(15,23,42,0.08); overflow:hidden; margin-bottom:20px;}
     .header{display:flex; gap:12px; padding:16px}
     .avatar{width:56px; height:56px; border-radius:50%; background-size:cover; background-position:center; flex-shrink:0}
     .meta{display:flex; flex-direction:column; justify-content:center}
     .name{font-weight:600; color:#0f172a}
-    .time{font-size:13px; color:var(--muted)}
+    .time{font-size:10px; color:var(--muted)}
 
-    .caption{padding:0 16px 12px; font-size:15px; color:#111827; line-height:1.5;}
+    .caption{padding:0 16px 12px; font-size:12px; color:#111827; line-height:1.5;}
 
     .media{background:#111; display:flex; align-items:center; justify-content:center}
     video{width:100%; height:auto; display:block}
@@ -26,18 +26,23 @@
     .btn-comment{color:#0f172a}
     .btn-share{color:#059669}
 
-    .stats{display:flex; gap:12px; padding:6px 14px; color:var(--muted); font-size:13px; align-items:center}
+    .stats{display:flex; gap:12px; padding:6px 14px; color:var(--muted); font-size:12px; align-items:center}
     .comments{padding:12px 14px 20px}
     .comment{display:flex; gap:10px; padding:10px 0; border-top:2px solid #f3f4f6}
     .c-avatar{width:40px; height:40px; border-radius:50%; background-size:cover; background-position:center; flex-shrink:0}
     .c-body{flex:1}
-    .c-name{font-weight:600; font-size:14px}
-    .c-text{font-size:12px; color:#111827; margin-top:4px; line-height:1.5; position:relative; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4;}
+    .c-name{font-weight:600; font-size:12px}
+    .c-text{font-size:11px; color:#111827; margin-top:4px; line-height:1.5; position:relative; overflow:hidden; ; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4;}
     .c-text.expanded{-webkit-line-clamp:unset; max-height:none;}
-    .read-more{color:var(--accent); font-size:13px; cursor:pointer; margin-top:4px; display:none;}
-    .c-time{font-size:12px; color:var(--muted); margin-top:6px}
+    .read-more{color:var(--accent); font-size:10px; cursor:pointer; margin-top:4px; display:none;}
+    .c-time{font-size:10px; color:var(--muted); margin-top:6px}
 
-    @media (max-width:420px){.avatar{width:48px;height:48px}.btn{font-size:13px;padding:8px}}
+    @media (max-width:420px){
+      .avatar{width:48px;height:48px}
+      .btn{font-size:13px;padding:8px}}
+    @media (max-width:800px){
+      .card{width:100%; border-radius:0;}
+      body{padding:0;}}
   </style>
 </head>
 <body>
@@ -599,6 +604,25 @@
           <div class="c-time">2 jam</div>
         </div>
       </div>
+      
+    </section>
+  </article>
+  
+  <article class="card" aria-label="Contoh thread Facebook - hanya hiasan">
+    <header class="header">
+      <div class="avatar" style="background-image:url('https://via.placeholder.com/160x160.png?text=Avatar')" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="name">penyu_Darat</div>
+        <div class="time">12 jam · Publik</div>
+      </div>
+    </header>
+
+    <div class="caption">
+      Sore hari menonton drama<br>
+      Drama korea aktornya tegas<br>
+      Ingin hati tetap bekerja bersama<br>
+      Apa daya harus pindah tugas<br>
+    </div>
       
     </section>
   </article>
