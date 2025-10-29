@@ -18,13 +18,19 @@
 
     .media{background:#111; display:flex; align-items:center; justify-content:center}
     video{width:100%; height:auto; display:block}
+    video::-webkit-media-controls {opacity: 0; transition: opacity 0.3s;}
+    video:hover::-webkit-media-controls {opacity: 1;}
 
     .actions{display:flex; gap:8px; padding:10px 12px; align-items:center; border-top:1px solid #eef2f7}
     .btn{flex:1; text-align:center; padding:10px 12px; border-radius:8px; cursor:default; user-select:none; font-weight:600; font-size:14px}
     .btn svg{vertical-align:middle; margin-right:8px}
-    .btn-like{color:#ef4444}
-    .btn-comment{color:#0f172a}
-    .btn-share{color:#059669}
+    .btn-like{color:#ef4444; transition: background-color 0.2s ease, box-shadow 0.2s ease;}
+    .btn-comment{color:#0f172a; transition: background-color 0.2s ease, box-shadow 0.2s ease;}
+    .btn-share{color:#059669; transition: background-color 0.2s ease, box-shadow 0.2s ease;}
+    
+    .btn-like:hover,.btn-comment:hover,.btn-share:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+}
 
     .stats{display:flex; gap:12px; padding:6px 14px; color:var(--muted); font-size:12px; align-items:center}
     .comments{padding:12px 14px 20px}
@@ -63,7 +69,7 @@
     </div>
 
     <section class="media">
-      <video src="sample-video.mp4" poster="https://via.placeholder.com/800x450.png?text=Video+Placeholder" autoplay loop muted playsinline preload="metadata">
+      <video src="https://github.com/Namlihaa/nopansfarewell/raw/refs/heads/main/images/MediaPlaceholder.mp4" poster="https://via.placeholder.com/800x450.png?text=Video+Placeholder" autoplay loop muted playsinline preload="metadata" controls>
         Browser Anda tidak mendukung tag video.
       </video>
     </section>
@@ -76,8 +82,8 @@
 
     <div class="stats">
       <div>👍 1.2K</div>
-      <div>💬 48 komentar</div>
-      <div>🔁 24 share</div>
+      <div>💬 30 komentar</div>
+      <div>🔁 354 share</div>
     </div>
 
     <section class="comments" aria-label="Komentar statis">
@@ -312,7 +318,7 @@
       <div class="comment">
         <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
         <div class="c-body">
-          <div class="c-name">AyhyiE_Nak_TangZel</div>
+          <div class="c-name">AyhyiE_Nak_DepHoekz</div>
           <div class="c-text">
             Halo Nopan! ✨<br>
             <br>
@@ -349,7 +355,7 @@
       <div class="comment">
         <div class="c-avatar" style="background-image:url('https://via.placeholder.com/80x80.png?text=A')" aria-hidden="true"></div>
         <div class="c-body">
-          <div class="c-name">VanDhill_okeh</div>
+          <div class="c-name">VandHill_okeh</div>
           <div class="c-text">
             Ikan lele pandai menyelam,<br>
             Cari makan tak pernah malas.<br>
@@ -612,16 +618,33 @@
     <header class="header">
       <div class="avatar" style="background-image:url('https://via.placeholder.com/160x160.png?text=Avatar')" aria-hidden="true"></div>
       <div class="meta">
-        <div class="name">penyu_Darat</div>
+        <div class="name">VandHill_okeh</div>
         <div class="time">12 jam · Publik</div>
       </div>
     </header>
 
     <div class="caption">
-      Sore hari menonton drama<br>
-      Drama korea aktornya tegas<br>
-      Ingin hati tetap bekerja bersama<br>
-      Apa daya harus pindah tugas<br>
+      Capek banget pas BTS, talent nya lawak 😒🤣😂<br>
+      @penyu_Darat<br>
+      #ai #chatgptai #geminiai #grokai<br>
+    </div>
+
+    <section class="media">
+      <video src="sample-video.mp4" poster="https://via.placeholder.com/800x450.png?text=Video+Placeholder" autoplay loop muted playsinline preload="metadata">
+        Browser Anda tidak mendukung tag video.
+      </video>
+    </section>
+
+    <div class="actions" role="group" aria-label="Aksi postingan">
+      <div class="btn btn-like" title="Suka">👍 Like</div>
+      <div class="btn btn-comment" title="Komentar">💬 Comment</div>
+      <div class="btn btn-share" title="Bagikan">↗️ Share</div>
+    </div>
+
+    <div class="stats">
+      <div>👍 1.2K</div>
+      <div>💬 48 komentar</div>
+      <div>🔁 24 share</div>
     </div>
       
     </section>
